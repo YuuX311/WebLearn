@@ -1,3 +1,76 @@
 body {
+    background-color: black;
+    position: relative;
+}
+.contenedorfila{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 80vh;
     
+}
+.contenedorcolumna {
+    display: flex;
+    flex-direction: column;
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    color:yellow;
+    
+}
+
+.titulo {
+    font-size: 100px;
+    padding: 10px;
+    margin: auto;
+}
+.contenedormenu{
+    
+    margin: auto;
+}
+.menuindividual {
+    font-size: 30px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.menuindividual:hover {
+    color: white;
+}
+
+.tooltip {
+  position: relative;
+}
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 110%;
+    bottom: 0;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 15px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+  
+}
+.tooltip::before {
+    content: "▸";
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    right: 100%;
+    transform: translateX(-50%);
+    bottom: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+.tooltip:hover::before {
+    opacity: 1;
 }

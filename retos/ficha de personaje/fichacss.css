@@ -1,0 +1,238 @@
+body {
+    font-family: "Chau Philomene One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+.contenedor{
+    background-color: rgb(114, 166, 224);
+    height: 700px;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    
+}
+.contenedor div{
+    color: white;
+
+}
+.fila1 {
+    height: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+.fila2 {
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+.fila3 {
+    height: 40%;
+    display: flex;
+    justify-content: space-around;
+}
+.fila4{
+    height: 15%;
+    display: flex;
+    justify-content: center;
+}
+.hpmp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.xp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.stat1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.stat2 {
+    display: flex;
+    justify-content: space-between;
+}
+.stat3, .stat4 {
+    width: 40%;
+}
+.stat5 {
+    width: 10%;
+}
+.stat4 {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    box-sizing: border-box;
+    
+}
+.fuerza, .defensa, .magia, .resistencia, .agilidad, .suerte {
+    flex: 1;
+    position: relative;
+    background-color: white;
+    width: 100%;
+    border: 1px rgba(0, 0, 0, 0.397) solid;
+}
+.fuerza::after, .defensa::after, .magia::after, 
+.resistencia::after, .agilidad::after, .suerte::after {
+    content: "";
+    height: 100%;
+    position: absolute;
+}
+
+.fuerza::after{
+    
+    width: 90%;
+    background-color: yellow;
+    
+}
+.defensa::after{ 
+    width: 80%;
+    background-color: rgb(214, 138, 39);
+}
+.magia::after{
+    width: 20%;
+    background-color: rgb(243, 72, 234);
+}
+.resistencia::after{
+    width: 30%;
+    background-color: rgb(22, 204, 92);
+}
+.agilidad::after{
+    width: 60%;
+    background-color: rgb(97, 50, 128);
+}
+.suerte::after{
+    width: 40%;
+    background-color: rgb(31, 250, 2);
+}
+.nombre, .clase, .titulo {
+    width: 30%;
+    align-content: center;
+    text-align: center;
+    border: rgb(44, 44, 134, 0.404) 3px solid;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+.foto, .hpmp, .xp {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.hpmp, .xp {
+    
+    border: rgb(44, 44, 134, 0.404) 2px solid;
+    border-radius: 15px;
+    align-items: end;
+    padding: 10px;
+    
+}
+
+.hpbarra, .mpbarra{
+    background-color: white;
+    width: 100%;
+    height: 15%;
+    position: relative;
+}
+.hpbarra::after, .mpbarra::after {
+    position: absolute;
+    right: 0;
+    content: "";
+    height: 100%;
+}
+.hpbarra::after{
+    background-color: red;
+    width: calc((82/120)*100%);
+}
+.mpbarra::after{
+    background-color: rgb(18, 115, 226);
+    width: calc((7/15)*100%);
+}
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.barraxp {
+    background-color: white;
+    position: relative;
+    width: 100%;
+    height: 10%;
+}
+.barraxp::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    right: 0;
+    width: calc((1576/2561)*100%);
+    background-color: aqua;
+   
+}
+.stat1 {
+    width: 30%;
+    
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.equip{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.equip div {
+    width: max-content;
+}
+.tooltip {
+    position: relative;
+}
+.tooltip::after {
+    position: absolute;
+    content: attr(data-tooltip);
+    left: 0;
+    top: 100%;
+    width: max-content;
+    height: auto;
+    background-color: black;
+    border-radius: 5px;
+    padding: 2px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s, transform 0.8s;
+    transform: translate(0);
+    white-space: pre-line;
+    z-index: 1;
+}
+.tooltip:hover::after{
+    opacity: 1;
+    transform: translateX(150px);
+}
+.skill {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    padding: 10px;
+    box-sizing: border-box;
+}
+.lore {
+    width: 97%;
+    border: rgb(44, 44, 134, 0.404) 2px solid;
+    border-radius: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.lore p {
+    margin: auto;
+}
