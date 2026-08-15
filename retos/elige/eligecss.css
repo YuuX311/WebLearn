@@ -1,0 +1,66 @@
+.contgrid {
+    background-color: aquamarine;
+    height: 300px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 20% 40% 20%;
+    align-content: space-evenly;
+    grid-template-areas: "encabezado encabezado encabezado"
+    "opcion1 opcion2 opcion3"
+    "boton boton boton"
+    ; 
+    
+}
+.contgrid div {
+    border: 1px solid black;
+    display: grid;
+    place-content: center;
+}
+.encabezado {
+    grid-area: encabezado;
+}
+.opcion1, .opcion2, .opcion3 {
+    position: relative;
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+}
+img {
+    object-fit: contain;
+    width: 100%;
+    
+}
+.opcion1 {
+    grid-area: opcion1;
+    background-color: rgb(252, 198, 99);
+}
+.opcion2 {
+    grid-area: opcion2;
+    background-color: rgb(85, 187, 255);
+    
+}
+.opcion3 {
+    grid-area: opcion3;
+    background-color: rgb(60, 255, 60);
+    
+}
+.boton {
+    grid-area: boton;
+}
+.info {
+    background-color: black;
+    color: white;
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    font-size: 12px;
+    white-space: pre-line;
+    transition: opacity 0.25s;
+}
+
+.opcion1:hover .info, .opcion2:hover .info, .opcion3:hover .info {
+    opacity: 1;
+}

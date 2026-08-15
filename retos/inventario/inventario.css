@@ -1,0 +1,70 @@
+.inventario {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
+    background-color: rgb(255, 221, 179);
+    font-size: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.inventario div {
+    box-sizing: border-box;
+    
+}
+
+.titulo {
+    display: flex;
+    height: 10%;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid orangered;    
+}
+.col{
+    display: flex;
+    height: 80%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.col1 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 90%;
+    overflow: auto;
+    gap: 5px;    
+
+}
+.lista {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+.lista img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.info {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+}
+.lista:active .info {
+    opacity: 1;
+}
