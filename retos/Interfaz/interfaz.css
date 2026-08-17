@@ -1,0 +1,112 @@
+.contenedor {
+    background-color: blueviolet;
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 10% 30% 30% 10%;
+    grid-template-areas: "perfil perfil"
+    "imagen nivel"
+    "stats equipo"
+    "skills skills";
+    align-content: space-around;
+}
+.contenedor div {
+    border: 1px white dotted;
+}
+/* grid areas */
+.perfil {
+    grid-area: perfil;
+}
+.imagen {
+    grid-area: imagen;
+}
+.nivel {
+    grid-area: nivel;
+}
+.stats {
+    grid-area: stats;
+}
+.equipo {
+    grid-area: equipo;
+}
+.skills {
+    grid-area: skills;
+}
+/*columnas y filas*/
+.nivel, .stats, .equipo, .skills {
+    display: flex;
+    flex-direction: column;
+}
+
+.col1, .col2, .skill1  {
+    display: flex;
+}
+
+/* distribución*/
+.col1>div, .col2>div {
+width: 50%;
+}
+.skill1 {
+    justify-content: space-around;
+}
+.nivel, .equipo, .stats {
+    justify-content: space-evenly;
+}
+/*Barras*/
+.bhp, .bmp, .bxp, .bfuerza, .bdefensa, .bmagia, .bagilidad{
+    width: 100%;
+    height: 1lh;
+    background-color: rgb(250, 118, 100);
+    position: relative;
+}
+.bhp::after, .bmp::after, .bxp::after, .bfuerza::after, .bdefensa::after, .bmagia::after, .bagilidad::after{
+    position: absolute;
+    left: 0;
+    height: 1lh;
+    content: "";
+    background-color: rgb(240, 227, 52);
+    z-index: 1;
+}
+.bhp::after {
+    width: calc((175/200)*100%);
+}
+.bmp::after {
+    width: calc((75/130)*100%);
+}
+.bfuerza::after{
+    width: calc((70/100)*100%);
+}
+.bdefensa::after {
+    width: calc((40/100)*100%);
+}
+.bmagia::after {
+    width: calc((10/100)*100%);
+}
+.bagilidad::after {
+    width: calc((65/100)*100%);
+}
+.bxp::after {
+    width: calc((265/879)*100%);
+}
+/*Tooltips*/
+.tooltip {
+    position: relative;
+}
+.tooltip::before {
+    position: absolute;
+    width: 60px;
+    left: 0;
+    content: attr(data-tooltip);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.25s ease, left 0.7s ease;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    text-align: end;
+
+}
+.tooltip:hover::before{
+    opacity: 1;
+    left: 50%;
+}
